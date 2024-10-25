@@ -1,0 +1,17 @@
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\bin\Debug\net8.0\EntrolyticsNotifier.exe
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\bin\Debug\net8.0\EntrolyticsNotifier.deps.json
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\bin\Debug\net8.0\EntrolyticsNotifier.runtimeconfig.json
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\bin\Debug\net8.0\EntrolyticsNotifier.dll
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\bin\Debug\net8.0\EntrolyticsNotifier.pdb
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\EntrolyticsNotifier.csproj.AssemblyReference.cache
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\EntrolyticsNotifier.GeneratedMSBuildEditorConfig.editorconfig
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\EntrolyticsNotifier.AssemblyInfoInputs.cache
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\EntrolyticsNotifier.AssemblyInfo.cs
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\EntrolyticsNotifier.csproj.CoreCompileInputs.cache
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\Entrolyt.9182E173.Up2Date
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\EntrolyticsNotifier.dll
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\refint\EntrolyticsNotifier.dll
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\EntrolyticsNotifier.pdb
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\EntrolyticsNotifier.genruntimeconfig.cache
+D:\Random_Projects\MotilentTest\EntrolyticsNotifier\obj\Debug\net8.0\ref\EntrolyticsNotifier.dll
