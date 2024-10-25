@@ -17,7 +17,15 @@ namespace EntrolyticsNotifier
 
         public async Task<HttpResponseMessage> SendNotificationAsync(Notification notification)
         {
-            throw new NotImplementedException();
+           if (notification == null) throw new ArgumentNullException(nameof(notification));
+            if (string.IsNullOrEmpty(notification.NotificationUrl)) throw new ArgumentException("Notification URL cannot be null or empty.", nameof(notification.NotificationUrl));
+            
+            var jsonContent = JsonConvert.SerializeObject(notification.NotificationContent);
+            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync(notification.NotificationUrl, httpContent);
+
+            return response;
         }
     }
 }

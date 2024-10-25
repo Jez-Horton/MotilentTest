@@ -9,7 +9,14 @@ namespace EntrolyticsNotifier
     {
         public Notification LoadNotification(string filePath)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(filePath))
+                throw new ArgumentException("File path cannot be null or empty.", nameof(filePath));
+
+            if (!File.Exists(filePath))
+                throw new FileNotFoundException("JSON file not found.", filePath);
+
+            string jsonData = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<Notification>(jsonData);
         }
     }
 }

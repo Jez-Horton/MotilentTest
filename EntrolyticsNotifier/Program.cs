@@ -2,6 +2,11 @@
 using System.Diagnostics;
 using System.Text;
 using EntrolyticsNotifier.Models;
+using EntrolyticsNotifier;
+
+
+NotificationLoader notificationLoader;
+NotificationSender notificationSender;
 
 static async Task Main(string[] args)
 {
@@ -12,52 +17,77 @@ static async Task Main(string[] args)
     }
 
     string filePath = args[0];
+    var loader = new NotificationLoader();
 
-    if (!File.Exists(filePath))
+    // Load the notification using NotificationLoader
+    Notification notification;
+    try
     {
-        Console.WriteLine("Error: JSON file not found.");
+        notification = loader.LoadNotification(filePath);
+    }
+    catch (Exception ex) when (ex is ArgumentException || ex is FileNotFoundException || ex is JsonException)
+    {
+        Console.WriteLine($"Error loading notification: {ex.Message}");
         return;
     }
 
-    try
+    // Display menu options
+    bool exit = false;
+    while (!exit)
     {
-        string jsonData = File.ReadAllText(filePath);
-        var notification = JsonConvert.DeserializeObject<Notification>(jsonData);
+        Console.WriteLine("\nSelect an action:");
+        Console.WriteLine("1. Send Notification");
+        Console.WriteLine("2. View Notification Content");
+        Console.WriteLine("3. Exit");
+        Console.Write("Enter your choice (1-3): ");
+        string choice = Console.ReadLine();
 
-        if (notification == null || string.IsNullOrEmpty(notification.NotificationUrl))
+        switch (choice)
         {
-            Console.WriteLine("Error: Invalid JSON content.");
-            return;
+            case "1":
+                await SendNotification(notification);
+                break;
+            case "2":
+                ViewNotificationContent(notification);
+                break;
+            case "3":
+                exit = true;
+                Console.WriteLine("Exiting the application.");
+                break;
+            default:
+                Console.WriteLine("Invalid choice. Please select an option from 1 to 3.");
+                break;
         }
+    }
+}
 
-        var content = JsonConvert.SerializeObject(notification.NotificationContent);
-        using (var client = new HttpClient())
+static async Task SendNotification(Notification notification)
+{
+    using (var httpClient = new HttpClient())
+    {
+        var sender = new NotificationSender(httpClient);
+        try
         {
-            var httpContent = new StringContent(content, Encoding.UTF8, "application/json");
-            var stopwatch = Stopwatch.StartNew();
-
-            HttpResponseMessage response = await client.PostAsync(notification.NotificationUrl, httpContent);
-            stopwatch.Stop();
-
+            var response = await sender.SendNotificationAsync(notification);
             string responseContent = await response.Content.ReadAsStringAsync();
 
+            Console.WriteLine("\n--- Notification Sent ---");
             Console.WriteLine($"Notification URL: {notification.NotificationUrl}");
-            Console.WriteLine($"Content Sent: {content}");
+            Console.WriteLine($"Content Sent: {JsonConvert.SerializeObject(notification.NotificationContent)}");
             Console.WriteLine($"Content Received: {responseContent}");
             Console.WriteLine($"HTTP Response Code: {response.StatusCode}");
-            Console.WriteLine($"Response Time: {stopwatch.ElapsedMilliseconds} ms");
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"HTTP Error: {ex.Message}");
         }
     }
-    catch (JsonException)
-    {
-        Console.WriteLine("Error: Failed to parse JSON.");
-    }
-    catch (HttpRequestException e)
-    {
-        Console.WriteLine($"HTTP Error: {e.Message}");
-    }
-    catch (Exception e)
-    {
-        Console.WriteLine($"Unexpected Error: {e.Message}");
-    }
+}
+
+static void ViewNotificationContent(Notification notification)
+{
+    Console.WriteLine("\n--- Notification Content ---");
+    Console.WriteLine($"Notification URL: {notification.NotificationUrl}");
+    Console.WriteLine($"Report UID: {notification.NotificationContent.ReportUID}");
+    Console.WriteLine($"Study Instance UID: {notification.NotificationContent.StudyInstanceUID}");
 }

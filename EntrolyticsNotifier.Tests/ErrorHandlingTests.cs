@@ -50,7 +50,7 @@ namespace EntrolyticsNotifier.Tests
         [Test]
         public void LoadInvalidJson_ShouldThrowJsonException()
         {
-            Assert.Throws<JsonException>(() => _notificationLoader.LoadNotification(InvalidJsonPath));
+            Assert.Throws<JsonSerializationException>(() => _notificationLoader.LoadNotification(InvalidJsonPath));
         }
     }
 }

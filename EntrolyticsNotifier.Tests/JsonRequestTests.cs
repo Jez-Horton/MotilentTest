@@ -28,7 +28,7 @@ namespace EntrolyticsNotifier.Tests
         [Test]
         public void ParseInvalidJson_ShouldThrowJsonException()
         {
-            Assert.Throws<JsonException>(() => JsonConvert.DeserializeObject<Notification>(InvalidJson));
+            Assert.Throws<JsonSerializationException>(() => JsonConvert.DeserializeObject<Notification>(InvalidJson));
         }
     }
 }
