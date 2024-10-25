@@ -1,6 +1,0 @@
-@EntrolyticsApi_HostAddress = http://localhost:5191
-
-GET {{EntrolyticsApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

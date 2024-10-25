@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EntrolyticsNotifier")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8378c669b02bd4b4bbe6fa7f9403715ab2192581")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67f42932dc0b3abf87d39717c901838b331276c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("EntrolyticsNotifier")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EntrolyticsNotifier")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

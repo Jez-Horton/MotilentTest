@@ -13,7 +13,6 @@ namespace EntrolyticsNotifier
         {
             var loader = new NotificationLoader();
 
-
             bool exit = false;
             while (!exit)
             {
