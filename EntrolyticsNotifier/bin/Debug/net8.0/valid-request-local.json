@@ -1,5 +1,5 @@
 ﻿{
-  "notificationUrl": "http://localhost:5000/api/notification/test",
+  "notificationUrl": "https://localhost:7069/api/Notification/test",
   "notificationContent": {
     "reportUID": "20fb8e02-9c55-410a-93a9-489c6f1d7598",
     "studyInstanceUID": "9998e02-9c55-410a-93a9-489c6f789798"
