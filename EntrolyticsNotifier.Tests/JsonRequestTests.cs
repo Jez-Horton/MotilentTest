@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using EntrolyticsNotifier.Models;
+using EntrolyticsNotifier.Services;
 
 namespace EntrolyticsNotifier.Tests
 {

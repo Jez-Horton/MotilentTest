@@ -7,6 +7,7 @@ using Moq.Protected;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using EntrolyticsNotifier.Models;
+using EntrolyticsNotifier.Services;
 
 namespace EntrolyticsNotifier.Tests
 {

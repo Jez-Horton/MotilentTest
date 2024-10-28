@@ -1,1 +1,4 @@
 .vs/
+/EntrolyticsApi/bin/
+/EntrolyticsNotifier/bin/
+/EntrolyticsNotifier.Tests/bin/

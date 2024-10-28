@@ -13,6 +13,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC80C8FC-ED12-4317-A720-9DADEC76304E}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		localtest.json = localtest.json
+		readme.md = readme.md
+		webrequest.json = webrequest.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntrolyticsNotifier.Api", "EntrolyticsApi\EntrolyticsNotifier.Api.csproj", "{083481D2-9BD2-4FCD-8B27-AE5491271086}"

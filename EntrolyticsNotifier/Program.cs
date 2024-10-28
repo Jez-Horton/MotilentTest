@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Text;
 using EntrolyticsNotifier.Models;
+using EntrolyticsNotifier.Services;
 using EntrolyticsNotifier;
 using System.Net.Http;
 
@@ -11,8 +12,6 @@ namespace EntrolyticsNotifier
     {
         public static async Task Main(string[] args)
         {
-            var loader = new NotificationLoader();
-
             bool exit = false;
             while (!exit)
             {
@@ -84,9 +83,9 @@ namespace EntrolyticsNotifier
         {
             try
             {
-                var sender = new NotificationLoader();
+                var loader = new NotificationLoader();
 
-                Notification notification = sender.LoadNotification(filePath);
+                Notification notification = loader.LoadNotification(filePath);
 
                 Console.WriteLine("\n--- Notification Content ---");
                 Console.WriteLine($"Notification URL: {notification.NotificationUrl}");

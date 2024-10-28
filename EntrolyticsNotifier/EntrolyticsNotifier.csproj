@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Jsons\valid-request-local.json" />
     <None Remove="valid-request-local.json" />
     <None Remove="valid-request-webhooksite.json" />
   </ItemGroup>
@@ -18,7 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Jsons\" />
+    <None Update="localtest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="webrequest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

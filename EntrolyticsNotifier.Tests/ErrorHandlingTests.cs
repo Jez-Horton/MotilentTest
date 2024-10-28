@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using EntrolyticsNotifier.Services;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
